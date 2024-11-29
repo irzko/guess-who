@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const getCharacters = async (spreadsheetId: string) => {
-  return await getGSheet(spreadsheetId, "0");
+  return await getGSheet(spreadsheetId, "0") as unknown as Character[];
 };
 
 export default async function PickCharacterPage({
