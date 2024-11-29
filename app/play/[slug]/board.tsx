@@ -22,7 +22,7 @@ const Card = ({ character }: { character: Character }) => {
         {character.name}
       </p>
       {isClose && (
-        <div className="bg-gray-100/90 text-gray-500 absolute flex justify-center items-center inset-0">
+        <div className="bg-gray-100/90 text-gray-900 absolute flex justify-center items-center inset-0">
           <svg className="w-[48px] h-[48px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m6 6 12 12m3-6a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
           </svg>
@@ -54,7 +54,7 @@ export default function Board({ data: characters }: { data: Character[] }) {
           />
         </div>
 
-        <h2 className="text-center text-3xl font-bold py-1.5 md:py-2">
+        <h2 className="text-center text-3xl font-bold py-4">
           {characterSelected.name}
         </h2>
       </div>
