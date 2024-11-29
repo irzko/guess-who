@@ -36,6 +36,8 @@ export default function Board({ data: characters }: { data: Character[] }) {
   const characterSelected = characters.find(
     (character) => character.id === characterSelectedId,
   );
+
+  if (!characterSelected) return null
   return (
     <>
       
