@@ -2,7 +2,7 @@ import seedrandom from 'seedrandom';
 
 
 
-export function getRandomElements(array:any[], n: number, seed: string) {
+export function getRandomElements(array:Character[], n: number, seed: string) {
     const random = seedrandom(seed);
     const shuffled = array.slice();
     for (let i = shuffled.length - 1; i > 0; i--) {

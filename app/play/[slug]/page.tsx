@@ -1,13 +1,12 @@
 import { getGSheet } from "@/lib/getGSheet";
 import { getRandomElements } from "@/lib/getRandomElements";
-import Image from "next/image";
 import Board from "./board";
 
 
 
 //1Ls8wM7rnT4ND3lGh2GBIOmh0WjTYC4HU_reZ3rFeS7g/edit#gid=0
 const getCharacters = async (spreadsheetId: string) => {
-  return await getGSheet(spreadsheetId, "0");
+  return await getGSheet(spreadsheetId, "0") as unknown as Character[];
 };
 
 export default async function Page({

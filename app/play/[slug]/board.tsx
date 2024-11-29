@@ -3,7 +3,7 @@ import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { useState } from "react";
 
-const Card = ({ character }: { character: any }) => {
+const Card = ({ character }: { character: Character }) => {
   const [isClose, setIsClose] = useState(false);
   return (
     <button
@@ -30,7 +30,7 @@ const Card = ({ character }: { character: any }) => {
   );
 };
 
-export default function Board({ data: characters }: { data: any[] }) {
+export default function Board({ data: characters }: { data: Character[] }) {
   const searchParams = useSearchParams();
   const characterSelectedId = searchParams.get("c");
   const characterSelected = characters.find(
