@@ -10,13 +10,16 @@ export default function Home() {
     <main className="flex justify-center">
       <div className="max-w-screen-lg w-full p-2">
         <div className="min-h-screen flex flex-col items-center justify-center w-full">
-          <form className="w-full space-y-4 max-w-xs" action={createSeed}>
+          <h1 className="text-4xl font-bold mb-16">Đoán xem là ai?</h1>
+          <form className="w-full flex flex-col items-center gap-4 max-w-xs" action={createSeed}>
+            <label htmlFor="seed" className="font-bold">Tạo hạt giống</label>
             <input
-              className="border border-gray-300 text-gray-900 text-sm rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              id="seed"
+              className="border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               name="seed"
-              placeholder="Nhập hạt giống"
+              placeholder="Nhập bất kỳ thứ gì"
             />
-            <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-2xl text-sm w-full sm:w-auto px-5 py-2.5 text-center">Bắt đầu</button>
+            <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-xl text-sm w-full sm:w-auto px-5 py-2.5 text-center">Bắt đầu</button>
           </form>
         </div>
       </div>
