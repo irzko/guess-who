@@ -18,12 +18,14 @@ const Card = ({ character }: { character: Character }) => {
           alt={character.name}
         />
       </div>
-      <p className="text-center font-semibold py-1.5 md:py-2">
+      <p className="text-center line-clamp-1 font-semibold py-1.5 md:py-2">
         {character.name}
       </p>
       {isClose && (
-        <div className="bg-gray-100/90 text-gray-900 font-semibold absolute flex justify-center items-center inset-0">
-          Loại
+        <div className="bg-gray-100/90 text-gray-900 absolute flex justify-center items-center inset-0">
+          <svg className="w-[48px] h-[48px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m6 6 12 12m3-6a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+          </svg>
         </div>
       )}
     </button>

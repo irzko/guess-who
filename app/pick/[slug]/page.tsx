@@ -40,7 +40,7 @@ export default async function PickCharacterPage({
                       alt={character.name}
                     />
                   </div>
-                  <p className="text-center font-semibold py-1.5 md:py-2">
+                  <p className="text-center line-clamp-1 font-semibold py-1.5 md:py-2">
                     {character.name}
                   </p>
                 </Link>
