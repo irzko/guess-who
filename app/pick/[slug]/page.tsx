@@ -18,7 +18,7 @@ export default async function PickCharacterPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const slug = (await params).slug;
+  const slug = decodeURIComponent((await params).slug);
   if (!slug) {
     return null;
   }
@@ -32,7 +32,7 @@ export default async function PickCharacterPage({
         <BackButton />
         <div className="text-center">
           <h1 className="text-4xl font-bold">Chọn một nhân vật</h1>
-          <p className="text-gray-500 font-semibold">Hạt giống: {Buffer.from(slug).toString("utf8")}</p>
+          <p className="text-gray-500 font-semibold">Hạt giống: {Buffer.from(slug, 'base64').toString("utf8")}</p>
         </div>
         <ul className="grid grid-cols-3 md:grid-cols:6 gap-2">
           {charactersSelected.map((character) => {

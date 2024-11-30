@@ -4,7 +4,7 @@ export default function Home() {
   async function createSeed(formData: FormData) {
     "use server";
     const seed = formData.get("seed") as string;
-    redirect("/pick/" + Buffer.from(seed).toString("base64"));
+    redirect("/pick/" + encodeURIComponent(Buffer.from(seed).toString("base64")));
   }
   return (
     <main className="flex justify-center">
