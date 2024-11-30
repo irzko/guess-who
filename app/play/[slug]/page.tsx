@@ -18,7 +18,7 @@ export default async function Page({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const slug = (await params).slug;
+  const slug = decodeURIComponent((await params).slug);
   if (!slug) {
     return null;
   }
