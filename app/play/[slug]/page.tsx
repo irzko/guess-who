@@ -1,13 +1,17 @@
 import { getGSheet } from "@/lib/getGSheet";
 import { getRandomElements } from "@/lib/getRandomElements";
 import Board from "./board";
-
-
+import { unstable_cache } from "next/cache";
+import BackButton from "@/components/BackButton";
 
 //1Ls8wM7rnT4ND3lGh2GBIOmh0WjTYC4HU_reZ3rFeS7g/edit#gid=0
-const getCharacters = async (spreadsheetId: string) => {
-  return await getGSheet(spreadsheetId, "0") as unknown as Character[];
-};
+const getCharacters = unstable_cache(
+  async (spreadsheetId: string) => {
+    return (await getGSheet(spreadsheetId, "0")) as unknown as Character[];
+  },
+  ["characters"],
+  { tags: ["characters"] },
+);
 
 export default async function Page({
   params,
@@ -25,7 +29,8 @@ export default async function Page({
   return (
     <main className="flex justify-center">
       <div className="max-w-screen-lg w-full p-2">
-          <Board data={charactersSelected} />
+        <BackButton />
+        <Board data={charactersSelected} />
       </div>
     </main>
   );

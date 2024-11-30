@@ -11,7 +11,7 @@ export default function Home() {
       <div className="max-w-screen-lg w-full p-2">
         <div className="min-h-screen flex flex-col items-center justify-center w-full">
           <h1 className="text-4xl font-bold mb-16">Đoán xem là ai?</h1>
-          <form className="w-full flex flex-col items-center gap-4 max-w-xs" action={createSeed}>
+          <form className="w-full flex flex-col items-center gap-4 max-w-xs" action={createSeed} autoComplete="off">
             <label htmlFor="seed" className="font-bold">Tạo hạt giống</label>
             <input
               id="seed"

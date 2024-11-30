@@ -2,10 +2,16 @@ import { getGSheet } from "@/lib/getGSheet";
 import { getRandomElements } from "@/lib/getRandomElements";
 import Image from "next/image";
 import Link from "next/link";
+import { unstable_cache } from "next/cache";
+import BackButton from "@/components/BackButton";
 
-const getCharacters = async (spreadsheetId: string) => {
-  return await getGSheet(spreadsheetId, "0") as unknown as Character[];
-};
+const getCharacters = unstable_cache(
+  async (spreadsheetId: string) => {
+    return (await getGSheet(spreadsheetId, "0")) as unknown as Character[];
+  },
+  ["characters"],
+  { tags: ["characters"] },
+);
 
 export default async function PickCharacterPage({
   params,
@@ -22,12 +28,19 @@ export default async function PickCharacterPage({
   const charactersSelected = getRandomElements(characters, 25, slug);
   return (
     <main className="flex justify-center">
-      <div className="max-w-screen-lg w-full p-2">
-        <h1 className="text-4xl font-bold mb-4 py-4">Chọn nhân vật</h1>
+      <div className="max-w-screen-lg w-full space-y-10 p-2">
+        <BackButton />
+        <div className="text-center">
+          <h1 className="text-4xl font-bold">Chọn một nhân vật</h1>
+          <p className="text-gray-500 font-semibold">Hạt giống: {slug}</p>
+        </div>
         <ul className="grid grid-cols-3 md:grid-cols:6 gap-2">
           {charactersSelected.map((character) => {
             return (
-              <li key={character.id} className="w-full border border-gray-200 shadow overflow-hidden rounded-lg">
+              <li
+                key={character.id}
+                className="w-full border border-gray-200 shadow overflow-hidden rounded-lg"
+              >
                 <Link
                   href={`/play/${slug}?c=${character.id}`}
                   className="w-full hover:bg-gray-50"
@@ -40,7 +53,7 @@ export default async function PickCharacterPage({
                       alt={character.name}
                     />
                   </div>
-                  <p className="text-center line-clamp-1 font-semibold py-1.5 md:py-2">
+                  <p className="text-center line-clamp-1 font-semibold py-1.5 md:py-2 px-2">
                     {character.name}
                   </p>
                 </Link>
