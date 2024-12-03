@@ -44,5 +44,7 @@ export default function GET(
     });
   }
 
-  res.end();
+  res.json({
+    message: "Socket is running",
+  })
 }
