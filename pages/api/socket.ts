@@ -22,7 +22,8 @@ export default function handler(
 ) {
   console.log(req.method)
   if (res.socket.server.io) {
-    console.log("Socket is already running.");
+    console.log("Socket is already running.")
+    return
   } else {
     console.log("Socket is initializing...");
 
