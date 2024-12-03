@@ -27,7 +27,7 @@ export default function handler(
     console.log("Socket is initializing...");
 
     const io = new Server(res.socket.server, {
-      cors: { origin: "https://guess-idol.vertcel.app" },
+      cors: { origin: "https://guess-idol.vercel.app" },
     });
     res.socket.server.io = io;
 
