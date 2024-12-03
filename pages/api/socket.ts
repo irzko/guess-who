@@ -26,10 +26,7 @@ export default function handler(
   } else {
     console.log("Socket is initializing...");
 
-    const io = new Server(res.socket.server, {
-      cors: { origin: "https://guess-idol.vercel.app" },
-      path: "/api/socket",
-    });
+    const io = new Server(res.socket.server, { path: "/api/socket", addTrailingSlash: false, cors: { origin: "*" } });
     res.socket.server.io = io;
 
     io.on("connection", (socket) => {

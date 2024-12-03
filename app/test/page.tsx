@@ -10,9 +10,7 @@ export default function Page() {
   const [msgInput, setMsgInput]= useState<string>("");
 
   useEffect(() => {
-    fetch("/api/socket");
-    socket = io();
-
+    socket = io({ path: "/api/socket", addTrailingSlash: false })
     function onConnect() {
       setIsConnected(true);
     }
