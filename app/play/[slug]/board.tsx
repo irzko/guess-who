@@ -57,7 +57,7 @@ export default function Board({ data: characters }: { data: Character[] }) {
             alt={characterSelected.name}
           />
         </div>
-        <div className="z-0 absolute inset-0 translate-y-1">
+        <div className="z-0 absolute inset-0 translate-y-1 w-full">
           <Image
             className="object-cover rounded-2xl filter blur-lg scale-105 saturate-150 opacity-30"
             src={characterSelected.image}
