@@ -28,6 +28,7 @@ export default function handler(
 
     const io = new Server(res.socket.server, {
       cors: { origin: "https://guess-idol.vercel.app" },
+      path: "/api/socket",
     });
     res.socket.server.io = io;
 
