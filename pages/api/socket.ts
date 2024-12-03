@@ -16,7 +16,7 @@ interface NextApiResponseWithSocket extends NextApiResponse {
   socket: SocketWithIO;
 }
 
-export default function handler(
+export default function GET(
   req: NextApiRequest,
   res: NextApiResponseWithSocket,
 ) {
