@@ -45,19 +45,23 @@ export default function Board({ data: characters }: { data: Character[] }) {
       
       <div className="flex flex-col items-center">
         <h2 className="text-3xl font-bold py-4">Đã chọn</h2>
-        <div className="relative aspect-[3/4] w-64 p-4">
+        <div className="relative w-64 h-auto">
+        <div className="relative aspect-[3/4] w-full">
           <Image
             className="z-10 object-cover rounded-2xl"
             src={characterSelected.image}
             fill
             alt={characterSelected.name}
           />
+        </div>
+        <div className="z-0 absolute inset-0 translate-y-1">
           <Image
-            className="z-0 object-cover rounded-2xl absolute inset-0 filter blur-lg scale-105 saturate-150 opacity-30 translate-y-1"
+            className="object-cover rounded-2xl filter blur-lg scale-105 saturate-150 opacity-30"
             src={characterSelected.image}
             fill
             alt={characterSelected.name}
           />
+        </div>
         </div>
 
         <h2 className="text-center text-3xl font-bold py-4">
