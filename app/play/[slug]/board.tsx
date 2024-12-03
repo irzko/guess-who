@@ -34,6 +34,9 @@ const Card = ({ character }: { character: Character }) => {
 
 export default function Board({ data: characters }: { data: Character[] }) {
   const searchParams = useSearchParams();
+  if (!searchParams) {
+    return null
+  }
   const characterSelectedId = searchParams.get("c");
   const characterSelected = characters.find(
     (character) => character.id === characterSelectedId,
