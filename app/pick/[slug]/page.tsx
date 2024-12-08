@@ -39,7 +39,7 @@ export default async function PickCharacterPage({
             return (
               <li
                 key={character.id}
-                className="w-full border border-gray-200 shadow overflow-hidden rounded-lg"
+                className="w-full shadow-md overflow-hidden bg-white rounded-lg"
               >
                 <Link
                   href={`/play/${slug}?c=${character.id}`}
@@ -53,7 +53,7 @@ export default async function PickCharacterPage({
                       alt={character.name}
                     />
                   </div>
-                  <p className="text-center line-clamp-1 font-semibold py-1.5 md:py-2 px-2">
+                  <p className="text-center text-black line-clamp-1 font-semibold py-1.5 md:py-2 px-2">
                     {character.name}
                   </p>
                 </Link>
