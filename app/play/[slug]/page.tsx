@@ -27,11 +27,10 @@ export default async function Page({
   );
   const charactersSelected = getRandomElements(characters, 25, slug);
   return (
-    <main className="flex justify-center">
+
       <div className="max-w-screen-lg w-full p-2">
         <BackButton />
         <Board data={charactersSelected} />
       </div>
-    </main>
   );
 }

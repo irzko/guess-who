@@ -59,7 +59,7 @@ export default function Board({ data: characters }: { data: Character[] }) {
   return (
     <>
       <div className="flex flex-col items-center">
-        <h2 className="text-3xl font-bold py-4">Đã chọn</h2>
+        <h2 className="text-3xl font-bold py-4 text-white">Đã chọn</h2>
         <div className="relative w-full max-w-64 h-auto mr-5">
           <div className="relative aspect-[3/4] w-full m-5">
             <Image
@@ -79,7 +79,7 @@ export default function Board({ data: characters }: { data: Character[] }) {
           </div>
         </div>
 
-        <h2 className="text-center text-3xl font-bold py-4">
+        <h2 className="text-center text-white text-3xl font-bold py-4">
           {characterSelected.name}
         </h2>
       </div>
