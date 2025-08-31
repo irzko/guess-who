@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="max-w-screen-lg relative w-full p-2">
       <div className="h-full flex flex-col items-center justify-center w-full">
-        <h1 className="text-4xl text-white font-bold mb-16">Thần tượng giấu mặt</h1>
+        <h1 className="text-4xl text-white mt-48 font-bold mb-16">Thần tượng giấu mặt</h1>
         <form
           className="w-full flex flex-col items-center gap-4 max-w-xs"
           action={createSeed}

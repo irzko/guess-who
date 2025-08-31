@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body>
-        <main className="flex justify-center bg-[url('/bg_mobile.png')] bg-no-repeat bg-fixed min-w-screen bg-black inset-x-0 top-0 min-h-screen bg-top">
+        <main className="flex justify-center">
           {children}
         </main>
       </body>
