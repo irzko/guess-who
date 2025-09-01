@@ -11,13 +11,13 @@ export default function Home() {
   return (
     <div className="max-w-screen-lg relative w-full p-2">
       <div className="h-full flex flex-col items-center justify-center w-full">
-        <h1 className="text-4xl text-white mt-48 font-bold mb-16">Thần tượng giấu mặt</h1>
+        <h1 className="text-4xl mt-48 font-bold mb-16">Thần tượng giấu mặt</h1>
         <form
           className="w-full flex flex-col items-center gap-4 max-w-xs"
           action={createSeed}
           autoComplete="off"
         >
-          <label htmlFor="seed" className="font-bold text-white text-xl">
+          <label htmlFor="seed" className="font-bold text-xl">
             Tạo hạt giống
           </label>
           <input

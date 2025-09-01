@@ -19,7 +19,7 @@ export default async function PickCharacterPage() {
     <div className="max-w-screen-lg w-full space-y-10 p-2">
       <BackButton />
       <div className="text-center">
-        <h1 className="text-4xl text-white font-bold">Chọn một nhân vật</h1>
+        <h1 className="text-4xl font-bold">Tất cả nhân vật</h1>
       </div>
       <ul className="grid grid-cols-3 md:grid-cols:6 gap-2">
         {characters.map((character) => {

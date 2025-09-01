@@ -30,7 +30,7 @@ export default async function PickCharacterPage({
     <div className="max-w-screen-lg w-full space-y-10 p-2">
       <BackButton />
       <div className="text-center">
-        <h1 className="text-4xl text-white font-bold">Chọn một nhân vật</h1>
+        <h1 className="text-4xl font-bold">Chọn một nhân vật</h1>
         <p className="text-white font-semibold">
           Hạt giống: {Buffer.from(slug, "base64").toString("utf8")}
         </p>
